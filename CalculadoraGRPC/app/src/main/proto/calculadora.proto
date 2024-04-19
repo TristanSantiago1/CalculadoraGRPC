@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.proto.calcualdora";
+
+message ParametrosCalculadora{
+    string numero1 = 1;
+    string numero2 = 2;
+}
+
+message ResultadoOperacion{
+    string resultado = 1;
+}
+
+service OperarcionAritmetica{
+    rpc sumar(ParametrosCalculadora) returns (ResultadoOperacion);
+    rpc restar(ParametrosCalculadora) returns (ResultadoOperacion);
+    rpc multiplicar(ParametrosCalculadora) returns (ResultadoOperacion);
+    rpc dividir(ParametrosCalculadora) returns (ResultadoOperacion);
+}
+
+
